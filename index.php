@@ -1,6 +1,15 @@
 <?php  include("header.php"); ?>
+    <!--SlideShow-->
+    <link rel="stylesheet" href="css/refineslide.css" />
+    <script src="js/jquery.refineslide.min.js"></script>
+    <ul class="rs-slider">
+       <li><img src="images/img1.jpg" alt="" /></li>
+       <li><img src="images/img2.jpg" alt="" /></li>
+    </ul>
+    <!--SlideShow Ends-->
 
-	<div data-role="content" >
+	<div data-role="content">
+    
 		<ul data-role="listview" data-theme="a" class="upper_case">
          <?php
            include("function.php");
@@ -11,6 +20,18 @@
            liMaker("service", "need maintenance or repair?", "service", "service");
          ?>
 		</ul>	
-	</div><!-- /content -->
-
+</div><!-- /content -->
+<script>
+    $(document).ready(function () {
+        $('.rs-slider').refineSlide({
+            transition         : 'cubeH',
+            fallback3d         : 'fade',
+            transitionDuration : 800,
+            autoPlay           : true,
+            keyNav             : false,
+            delay              : 3000,
+            controls           : null
+        });
+    });
+</script>
 <?php  include("footer.php"); ?>	

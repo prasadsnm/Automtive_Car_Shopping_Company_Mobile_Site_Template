@@ -5,8 +5,6 @@ body
 {margin: 0;
 padding: 0;
 background: #e4e4e4;}
-img
-{border:0px;}
 a{
 	text-decoration: none;
 	border: none;
@@ -21,8 +19,17 @@ div{
 	padding: 0px;
 	border: none;
 }
+img{
+	border: 0px;
+}
+.clear{
+	clear: both;
+}
 
 /*Header*/
+#header{
+	position: relative;
+}
 #header h1{
 	font-family: 'Helvatica';
 	font-size: 26px;
@@ -84,3 +91,15 @@ div#custom_footer{position:relative;text-align:center;font-weight:normal;font-si
 	 background-size: 50%;
 	 padding-left: 19px;
 }
+
+#custom-li-1.ui-btn-active {
+    background:green !important;
+}
+
+#custom-li-2.ui-btn-active {
+    background:red !important;
+}
+
+#custom-li-3.ui-btn-active {
+    background:blue !important;
+}​
