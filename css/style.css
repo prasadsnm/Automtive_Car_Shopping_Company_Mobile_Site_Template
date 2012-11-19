@@ -28,14 +28,15 @@ img{
 
 /*Header*/
 #header{
-	position: relative;
+	background: url(../images/header_bg.png) repeat-x;
+	border-bottom: 1px solid #616161;
 }
 #header h1{
 	font-family: 'Helvatica';
 	font-size: 26px;
 	font-style: italic;
 	line-height: 18px;
-	padding: 0px; margin: 8px;
+	padding: 0px; margin: 8px; 
 }
 #header h1 span{
 	color: #33ccff;
@@ -57,23 +58,32 @@ img{
 /*List View*/
 .ui-li-thumb, .ui-li-icon {
     left: 1px;
-    max-height: 70px; 
-    max-width: 70px; 
+    max-height: 40px; 
+    max-width: 40px; 
+    top: 9px;
     position: absolute;
-    top: 13px;
 }
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+    padding-top:0px;
+    padding-bottom:0px;
+}
+ul.upper_case li{
+	background: url(../images/button.jpg) repeat-x !important;
+}	
 ul.upper_case li a{
+	margin-top: 5px;
 	font-size: 18px;
 	margin-left: -30px;
 	text-transform: capitalize;
 }
 ul.upper_case li a span{
 	display: block;
-	font-size: 14px;
+	font-size: 13px;
+	color: #33ccff;
 	font-weight: normal;
 	text-transform: capitalize;
 }
-li .ui-icon  { background: url(../images/next.png) 50% 50% no-repeat;  background-size: 24px 24px; }
+li .ui-icon  { background: url(../images/next.png) 50% 50% no-repeat;  background-size: 24px 24px; box-shadow: none;}
 
 /*Social icon on footer*/
 .social{padding:5px;padding-bottom: 5px;}  
@@ -91,15 +101,8 @@ div#custom_footer{position:relative;text-align:center;font-weight:normal;font-si
 	 background-size: 50%;
 	 padding-left: 19px;
 }
-
-#custom-li-1.ui-btn-active {
-    background:green !important;
+#footer{
+	background: #000 url('../images/footer-bg.jpg') no-repeat top right;
 }
 
-#custom-li-2.ui-btn-active {
-    background:red !important;
-}
-
-#custom-li-3.ui-btn-active {
-    background:blue !important;
-}​
+/*button*/

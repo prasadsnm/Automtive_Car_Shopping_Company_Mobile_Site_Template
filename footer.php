@@ -1,4 +1,4 @@
-	<div data-role="footer" data-theme="a">
+	<div data-role="footer" data-theme="b" id="footer">
 	        <!--Social Icon--> 	
 			<center>
 				<h4>Stay Connected</h4>
