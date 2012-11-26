@@ -19,13 +19,13 @@
                     Atlanta, GA 30092 
                 </p>				
                 <p>
-    				<a id="phone" data-theme="a" data-icon="custom" data-role="button" href="tel: 404-530-9657">
+    				<a class="button" data-theme="a" data-icon="phone" data-role="button" href="tel: 404-530-9657">
                        404-530-9657
                    </a>
                 </p>
                 <p>Email:<br/> 
     				<span>
-    					<a id="email" data-theme="a" data-icon="custom" data-role="button" href="mailto: multichiceapps@gmail.com">multichiceapps@gmail.com </a>
+    					<a class="button" data-theme="a" data-icon="email" data-role="button" href="mailto: multichiceapps@gmail.com">multichiceapps@gmail.com </a>
                     </span>
                 </p>
     		<!---->

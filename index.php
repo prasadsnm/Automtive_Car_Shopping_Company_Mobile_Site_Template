@@ -1,23 +1,21 @@
-<?php  include("header.php"); ?>
-    <!--SlideShow-->
-    <link rel="stylesheet" href="css/refineslide.css" />
-    <script src="js/jquery.refineslide.min.js"></script>
-    <ul class="rs-slider">
-       <li><img src="images/slide/img4.jpg" alt="" /></li>
-       <li><img src="images/slide/img3.jpg" alt="" /></li>
-       <li><img src="images/slide/img5.jpg" alt="" /></li>
-    </ul>
-    <!--SlideShow Ends-->
-
-	<div data-role="content">
-    
+<?php  
+    include("header.php");
+    include("slider.php");
+    include("function.php");
+?>
+<style type="text/css">
+.ui-li .ui-btn-inner  a.ui-link-inherit, .ui-li-static.ui-li {
+    padding-top:0px;
+    padding-bottom:0px;
+}
+</style>
+	<div data-role="content" data-theme="b" id="index_body">
 		<ul data-role="listview" data-theme="b" class="upper_case">
          <?php
-           include("function.php");
            liMaker("search", "new & pre-owned inventory", "search", "search_black");
            liMaker("call", "talk to the pros..", "call", "call_black");
            liMaker("inquire", "Ask what to know", "inquire", "inquire");
-           liMaker("trade-in", "trade in for top doller!", "trade_in", "trade_in");
+           liMaker("trade-in", "trade in for top doller!", "trade", "trade_in");
            liMaker("loan", "need financing? Apply now!", "loan", "loan");
            liMaker("service", "need maintenance or repair?", "service", "service");
          ?> 
@@ -28,10 +26,10 @@
         $('.rs-slider').refineSlide({
             transition         : 'cubeH',
             fallback3d         : 'fade',
-            transitionDuration : 800,
+            transitionDuration : 650,
             autoPlay           : true,
             keyNav             : false,
-            delay              : 3000,
+            delay              : 2500,
             controls           : null
         });
     });
