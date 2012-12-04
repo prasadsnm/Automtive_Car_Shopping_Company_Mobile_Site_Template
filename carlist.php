@@ -36,7 +36,9 @@
              return output;
         }        
         var parent = $('#phoneix .upper_case');
+        $('.loading').show();
         $.getJSON(url, function(data){
+          $('.loading').hide();
           if( b != "" ) {
             $.each(data, function(index, item){
                 if(item.body == b && item.year == yea && item.model == mod && item.make == m) {
@@ -89,6 +91,7 @@
   <div data-role="content" class="makelist" id="phoneix">
     <ul data-role="listview" data-theme="a" class="upper_case">
        <li data-role="list-divider" id="list_header" class="list_header">Select Car</li> 
+       <div class="loading"></div>
   </ul>
 </div><!-- /content -->
 <? include("footer.php"); ?>

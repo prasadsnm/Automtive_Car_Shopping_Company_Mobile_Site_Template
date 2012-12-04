@@ -6,7 +6,9 @@
             var parent = $('.search_cars .upper_case');
             var count = 0;
             var total = 0;
+            $(".loading").show();
             $.getJSON(url, function(data) {
+                $(".loading").hide();
                 $.each(data, function(index, item) {
   	                  ++total;
   	                if(item.year >= y) ++count; 
@@ -19,9 +21,10 @@
             });
 		  });
 </script>
-	<div data-role="content" class="search_cars">
+	<div data-role="content" class="search_cars" >
 		<ul data-role="listview" data-theme="b" class="upper_case">
-			   <li data-role="list-divider" id="list_header">Search New or Used</li>		    
+			   <li data-role="list-divider" id="list_header">Search New or Used</li>
+               <div class="loading"></div>		    
 		</ul>	
 	</div><!-- /content -->
    

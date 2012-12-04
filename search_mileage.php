@@ -30,9 +30,9 @@
 
         var parent = $('.miless .upper_case');
         var mileArray = new Array();
-
+        $('.loading').show();
         $.getJSON(url, function(data){
-
+          $('.loading').hide();
           if(type === "new_car"){
             $.each(data, function(index, item){
               if(item.year >= y) mileArray.push(item.miles);
@@ -67,7 +67,8 @@
 </script>
   <div data-role="content" data-theme="b" id="index_b" class="miless">   
     <ul data-role="listview" data-theme="b" class="upper_case">
-      <li data-role="list-divider" id="list_header">Select Mileage</li> 
+      <li data-role="list-divider" id="list_header">Select Mileage</li>
+      <div class="loading"></div> 
     </ul> 
 </div><!-- /content -->
 <?php  include("footer.php"); ?>  

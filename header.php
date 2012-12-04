@@ -20,15 +20,22 @@
     </script> <!--Custom select Menu-->
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 	<script type="text/javascript">
-        var url = "inventory/inventory.json"; // configuration of inventory
+       // configuration of inventory
+       var url = "http://multichoice.dealercp.com/inventory/?dealer=90961&format=json&jsoncallback=?";
         /* Initialization */
         var y = new Date().getFullYear();
         /* Count Array Element  */
 	</script>
 </head> 
 <body> 
-<div data-role="page">
+<div data-role="page" data-add-back-btn="true">
 	<div data-role="header" data-theme="b" data-position="inline" id="header">
-		<h1><a href="index.php" data-transition="slidedown">Car<span>Pursuit</span></a></h1>
+		<a data-rel="back" data-iconpos="notext" data-icon="back" ></a>
+		<h1>
+			<a href="index.php" data-transition="slidedown">
+			    Car<span>Pursuit</span>
+			    <label>Atlanta, GA</label>
+		    </a>
+	    </h1>
 		<a href="call.php" data-transition="slideup" data-icon="top-call" class="ui-btn-right" data-iconpos="notext" id="top_call">Call</a>
 	</div><!-- /header -->

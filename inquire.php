@@ -1,10 +1,11 @@
 <?php  include("header.php"); ?>
 <script type="text/javascript">
 		  $(document).ready(function(){
-		  	var url = "inventory/inventory.json";
 		  	var makeArray = new Array();
 		  	var parent = $('.makelist .upper_case');
+		  	$('.loading').show();
 		  	$.getJSON(url, function(data){
+		  		$('.loading').hide();
 		  		$.each(data, function(index, item){
 		  			if(($.inArray(item.make, makeArray)) == -1){
 		  			   makeArray.push(item.make);
@@ -18,6 +19,7 @@
 	<div data-role="content" class="makelist">
 		</style>
 		<ul data-role="listview" data-theme="a" class="upper_case">
+			<div class="loading"></div>
 		</ul>	
 	</div><!-- /content -->
    

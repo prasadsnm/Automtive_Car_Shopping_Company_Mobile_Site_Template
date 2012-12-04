@@ -31,7 +31,9 @@
           return count;
         }
         var parent = $('#carmodel .upper_case');
+        $('.loading').show();
         $.getJSON(url, function(data){
+          $('.loading').hide();
           if(type === "new_car"){
 
             if(b != ""){
@@ -104,7 +106,7 @@
              };
             if(yr != ""){
               for (var i = 0; i < arr.length; i++) {
-                  parent.append('<li data-icon="list-arrow" class="model"> <a href="carlist.php?make='+ m +'&type=' + type + '&model=' + arr[i] + '&year=' + yr +'"><img src="images/car_logo/' + arr[i] + '.png" class="ui-li-thumb"/><br/>' + arr[i] + '<span class="ui-li-count" id="counter1">' + countArray[i] + '</span></a></li>');
+                  parent.append('<li data-icon="list-arrow" class="model"> <a href="carlist.php?make='+ m +'&type=' + type + '&model=' + arr[i] + '&year=' + yr +'"><img src="images/car_model/' + yr + '-' + m + '-' + arr[i] + '.png" class="ui-li-thumb"/><br/>' + arr[i] + '<span class="ui-li-count" id="counter1">' + countArray[i] + '</span></a></li>');
                 }; 
                 parent.listview('refresh');  
             } else {
@@ -119,6 +121,7 @@
   <div data-role="content" id="carmodel">
     <ul data-role="listview" data-theme="a" class="upper_case">
        <li data-role="list-divider" id="list_header">Select Model</li> 
+       <div class="loading"></div>
     </ul>
   </div><!-- /content -->
 <? include("footer.php"); ?>

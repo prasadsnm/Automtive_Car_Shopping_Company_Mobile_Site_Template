@@ -29,9 +29,10 @@
           return count;
         }
 		  	var parent = $('#brand .upper_case');
+        $('.loading').show();
 		  	$.getJSON(url, function(data){
 
-
+          $('.loading').hide();
           if(type === "new_car") {
            
             if(b != ""){
@@ -110,6 +111,7 @@
 </script>
 	<div data-role="content" class="makelist" id="brand">
 		<ul data-role="listview" data-theme="a" class="upper_case">
+      <div class="loading"></div>
 		</ul>
 	</div><!-- /content -->
 <? include("footer.php"); ?>

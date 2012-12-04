@@ -53,6 +53,36 @@ img{
 	width: 33px;
 	height: 33px;
 }
+.ui-icon-back{
+	background: transparent url(../images/back.png) no-repeat;
+    box-shadow: none;
+	background-size: 25px 25px;
+	width: 32px;
+	height: 32px;
+}
+.ui-icon-home{
+	background: transparent url(../images/home.png) no-repeat;
+    box-shadow: none;
+	background-size: 30px 30px;
+	width: 33px;
+	height: 33px;
+}
+#header h1 label{
+	font-size: 9px;
+	display: block;
+	margin-left: 60px;
+	font-style: normal;
+	text-transform: uppercase;
+	font-family: Arial;
+}
+#data-theme-custom{
+	background: #000;
+}
+.loading{
+	height: 80px;
+	margin: 0px auto;
+	background: url(../images/loading.gif) no-repeat center;
+}
 #header .ui-btn-icon-notext{
     width:33px;
     height:33px;
@@ -61,18 +91,18 @@ img{
 }
 
 #header .ui-btn-up-c {
-    border: 0px;
+    border: none;
     box-shadow: none;
 }
 
 #header .ui-btn-icon-notext .ui-btn-inner {
     padding: 0px;
-
-
+    box-shadow: none;
 }
 
 #header .ui-btn-inner {
     border: 0px;
+    box-shadow: none;
 }
 
 #index_body{
@@ -350,4 +380,7 @@ option{
 }
 .visible{
 	display: block;
+}
+#desc{
+	margin: 6px;
 }

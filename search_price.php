@@ -43,9 +43,10 @@ function integerRound (digit) {
 
         var parent = $('#index_b .upper_case');
         var priceArray = new Array();
-
+        var url = "inventory/inventory.json";
+        $('.loading').show();
         $.getJSON(url, function(data){
-
+          $('.loading').hide(); 
           if(type === "new_car"){
 
             $.each(data, function(index, item){
@@ -77,9 +78,10 @@ function integerRound (digit) {
         });
       });
 </script>
-  <div data-role="content" data-theme="b" id="index_b">   
+  <div data-role="content" data-theme="a" id="index_b">   
     <ul data-role="listview" data-theme="b" class="upper_case">
-      <li data-role="list-divider" id="list_header">Select Price</li> 
+      <li data-role="list-divider" id="list_header">Select Price</li>
+      <div class="loading"></div> 
     </ul> 
 </div><!-- /content -->
 <?php  include("footer.php"); ?>  

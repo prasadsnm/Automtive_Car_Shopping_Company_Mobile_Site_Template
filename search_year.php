@@ -19,9 +19,9 @@
           return count;
         }  
 
-
+        $(".loading").show();
         $.getJSON(url, function(data){
-
+          $(".loading").hide();
           if(type === "new_car"){
 
             $.each(data, function(index, item){
@@ -66,6 +66,7 @@
 	<div data-role="content" data-theme="b" id="index_b" class="xyz">  
 		<ul data-role="listview" data-theme="b" class="upper_case">
       <li data-role="list-divider" id="list_header">Select Year</li> 
+      <div class="loading"></div>
 		</ul>	
 </div><!-- /content -->
 <?php  include("footer.php"); ?>	

@@ -31,8 +31,9 @@
           return count;
         }
         var parent = $('#anonym .upper_case');
+        $(".loading").show();
         $.getJSON(url, function(data){
-
+          $(".loading").hide();
           if(type === "new_car"){
 
             if(b != ""){
@@ -108,6 +109,7 @@
   <div data-role="content" class="year_body" id="anonym">
     <ul data-role="listview" data-theme="a" class="upper_case">
        <li data-role="list-divider" id="list_header">Select Year</li> 
+       <div class="loading"></div>
     </ul>
   </div><!-- /content -->
 <? include("footer.php"); ?>

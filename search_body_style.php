@@ -6,7 +6,6 @@
 <script type="text/javascript">
       $(document).ready(function(){
         <? echo "var type = $jstype;"; ?>
-        var url = "inventory/inventory.json";
         var bodyArray = new Array();
         function countElement(item, array){
           var count = 0;
@@ -17,7 +16,9 @@
         }
         var y = new Date().getFullYear();
         var parent = $('.body_styles .upper_case');
+        $('.loading').show();
         $.getJSON(url, function(data){
+          $('.loading').hide();
           if(type === "new_car"){
             $.each(data, function(index, item){
               if(item.year >= y) bodyArray.push(item.body);  
@@ -49,6 +50,7 @@
 	<div data-role="content" data-theme="b" class="body_styles">
 		<ul data-role="listview" data-theme="b" class="upper_case">
       <li data-role="list-divider" id="list_header">Select Body Style</li> 
+      <div class="loading"></div>
 		</ul>	
 </div><!-- /content -->
 <?php  include("footer.php"); ?>	

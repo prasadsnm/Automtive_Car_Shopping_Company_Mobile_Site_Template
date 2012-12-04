@@ -5,6 +5,7 @@
 <script type="text/javascript">
       $(document).ready(function(){
         <? echo "var ID = $jsid;" ?>
+        var vehicleUrl = "http://multichoice.dealercp.com/vehicle/?id=" + ID + "&format=json&jsoncallback=?";
         function addCommas(str) {
              var amount = new String(str);
              amount = amount.split("").reverse();
@@ -16,10 +17,11 @@
              return output;
         }        
         var imageUrl, title;
-        $.getJSON(url, function(data){
-            $.each(data, function(index, item){
-                if(item.id === ID) {
-                	$('#car_heading').html(item.year + ' ' + item.make + ' ' + item.model);
+
+
+        $.getJSON(vehicleUrl, function(item){
+                	$('#car_heading').html(item.year + ' ' + item.make + ' ' + item.model); 
+                  $('#desc').html(item.desc); 
                   title = 'Should I buy this car ' + item.year + ' ' + item.make + ' ' + item.model;
                 	$('#exhibition img').attr('src', item.pic[0].full);
                   imageUrl = item.pic[0].full;
@@ -29,10 +31,59 @@
                 	tr.each(function(){
                 		$(this).children('td:nth-child(2)').html(Details[$(this).index()]);
                 	});
-                	return false;
-                }  
-            });   
+ 
         });
+ /*
+(function($) {
+    $.fn.clickToggle = function(func1, func2) {
+        var funcs = [func1, func2];
+        this.data('toggleclicked', 0);
+        this.click(function() {
+            var data = $(this).data();
+            var tc = data.toggleclicked;
+            $.proxy(funcs[tc], this)();
+            data.toggleclicked = (tc + 1) % 2;
+        });
+        return this;
+    };
+}(jQuery));
+*/
+        $('#photos').click(function(){
+          $.getJSON(vehicleUrl, function(item){
+            $('#exhibition').html("");
+            $.each(item.pic, function(i, val){
+              $('#exhibition').append('<img src="' + val.full + '"/>'); 
+            });    
+          });
+          $('#photos').hide();
+          $('#lessphotos').show();
+          return false;
+        });
+
+        $('#lessphotos').click(function(){
+           $('#exhibition').html("");
+           $('#exhibition').append('<img src="' + imageUrl + '"/>');
+          $('#lessphotos').hide();
+          $('#photos').show();           
+           return false;          
+        });
+
+        
+        $('#fav_1').click(function(){
+
+          $('#fav_1').hide();
+          $('#fav_2').show();
+          return false;
+        });
+
+        $('#fav_2').click(function(){
+
+          $('#fav_2').hide();
+          $('#fav_1').show();           
+           return false;          
+        });        
+
+
       });
 </script>
 <div id='fb-root'></div>
@@ -69,20 +120,25 @@
 	<a href="tel:800-718-1720" class="button2" data-role="button" data-icon="phonn" data-theme="a" style="color:#000;">
 		Call Now!
 	</a>
-	<a href="" class="button2" data-role="button" data-icon="fav" data-theme="a" style="color:#000;">
+	<a href="" class="button2" data-role="button" data-icon="fav" data-theme="a" style="color:#000;" id="fav_1">
 		Add To Favorites
 	</a>
-	<a href="" class="button2" data-role="button" data-icon="photos" data-theme="a" style="color:#000;">
+  <a href="" class="button2" data-role="button" data-icon="fav" data-theme="a" style="color:#000;display:none;" id="fav_2">
+    Remove From Favorites
+  </a>  
+	<a href="" class="button2" data-role="button" data-icon="photos" data-theme="a" style="color:#000;" id="photos">
 		View All Photos
 	</a>		
+  <a href="" class="button2" data-role="button" data-icon="photos" data-theme="a" style="color:#000; display:none;" id="lessphotos">
+    View Less Photos
+  </a>  
 	</div>
 
-	<div id="exhibition"><img src=""> </div>
+	<div id="exhibition"><img src=""/> </div>
 	<div id="price_bar">
 		<span>Price:</span> 
 		<span id="r"></span>
 	</div>
-
 	<div id="friend">
 		Ask your friends if you should buy this car!
 	</div>
@@ -122,6 +178,7 @@
         	   ?>  		
         	</tbody>
         </table>
-    </div>
+    </div><br/><br/>
+    <div id="desc"></div>
 </div>
 <? include("footer.php"); ?>
