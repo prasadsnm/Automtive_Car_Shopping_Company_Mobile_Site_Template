@@ -262,7 +262,12 @@ div#custom_footer{position:relative;text-align:center;font-weight:normal;font-si
 	text-shadow: none;
 	padding: 0px;
 }
-
+#button2{
+	background: url(../images/button2.png) repeat-x;
+	color: #000;
+	text-shadow: none;
+	padding: 0px;
+}
 #price_bar, #friend{
 	margin: 0px auto;
 	text-align: center;
