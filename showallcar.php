@@ -48,7 +48,7 @@
               }
             });
             for (var i = 0; i < colorArray.length; i++) {
-                  parent.append('<li data-icon="list-arrow" id="l"> <a data-transition="slidedown" href="exhibit.php?id=' + idArray[i] + '"><img src="images/car_icon/' + mod + '.png" class="ui-li-thumb"/>' + yearArray[i] + ' ' + m + ' ' + mod +'<br/><label class="x">Color: </label><label class="y">' + colorArray[i]+ '</label><br/><label class="x">Price: </label><label class="y"> $' + addCommas(priceArray[i]) + '</label><br/><label class="x">Mileage: </label><label class="y">' + addCommas( mileageArray[i]) + '</label></a></li>'); 
+                  parent.append('<li data-icon="list-arrow" id="l"> <a data-transition="slidedown" data-ajax="false" href="exhibit.php?id=' + idArray[i] + '"><img src="images/car_icon/' + mod + '.png" class="ui-li-thumb"/>' + yearArray[i] + ' ' + m + ' ' + mod +'<br/><label class="x">Color: </label><label class="y">' + colorArray[i]+ '</label><br/><label class="x">Price: </label><label class="y"> $' + addCommas(priceArray[i]) + '</label><br/><label class="x">Mileage: </label><label class="y">' + addCommas( mileageArray[i]) + '</label></a></li>'); 
                   parent.listview('refresh'); 
                 };     
         });
