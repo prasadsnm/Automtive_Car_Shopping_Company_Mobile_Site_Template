@@ -30,7 +30,7 @@ img{
 
 /*Header*/
 #header{
-	background: url(../images/header_bg.png) repeat-x;
+	background: url(../images/images-green/header_bg-green.png) repeat-x;
 	border-bottom: 1px solid #616161;
 }
 #header h1{
@@ -41,7 +41,7 @@ img{
 	padding: 0px; margin: 8px; 
 }
 #header h1 span{
-	color: #33ccff;
+	color: #D0D0D0;
 }
 #header h1 a{
 	color: #FFF;
@@ -85,7 +85,7 @@ img{
 }
 #header .ui-btn-icon-notext{
     width:33px;
-    height:33px;
+    height:80px;
     border: none;        
     background: transparent;
 }
@@ -129,7 +129,7 @@ img{
     padding-bottom: 0px;
 }
 ul.upper_case li.index{
-	background: url(../images/button.jpg) repeat-x !important;
+	background: url(../images/images-green/button-green.jpg) repeat-x !important;
 }	
 ul.upper_case li{
 	background: url(../images/list_bg.jpg) repeat-x !important;
@@ -149,7 +149,7 @@ ul.upper_case li.index a{
 ul.upper_case li a span{
 	display: block;
 	font-size: 13px;
-	color: #33ccff;
+	color: #D0D0D0;
 	font-weight: normal;
 	text-transform: capitalize;
 }
@@ -181,7 +181,7 @@ ul.upper_case li.search a{
 	text-transform: capitalize;
 }
 ul.upper_case li.search{
-	background: url(../images/button.jpg) repeat-x !important;
+	background: url(../images/images-green/button-green.jpg) repeat-x !important;
 }
 
 ul.upper_case li.s a{

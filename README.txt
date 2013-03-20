@@ -1,1 +1,0 @@
-This is a smart phone website template for automotive car shopping compnay based on jquery mobile framework.

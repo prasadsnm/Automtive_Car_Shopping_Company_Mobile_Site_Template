@@ -1,11 +1,11 @@
 <? include("header.php"); 
    $id = isset($_GET['id'])?$_GET['id']:"";
    $jsid = json_encode($id);   
-?>       
+?>   
 <div data-role="content" data-theme="b">
   <div id="car_heading"></div>
   <div>
-  <a href="tel:800-718-1720" class="button2" data-role="button" data-icon="phonn" data-theme="a" style="color:#000;">
+  <a href="tel:<?=$phone?>" class="button2" data-role="button" data-icon="phonn" data-theme="a" style="color:#000;">
     Call Now!
   </a>
   <a href="" class="button2" data-role="button" data-icon="fav" data-theme="a" style="color:#000;" id="fav_1">
@@ -83,11 +83,13 @@ style="color:#3B5998;">
     <div id="desc"></div>
 </div>
 <script type="text/javascript">
-      var imageUrl, title, url;
+      var imageUrl, title, _url, _caption, _description;
   $(document).ready(function(){
-        <? echo "var ID = $jsid;" ?>
-        url = "http://mypushportal.com/demo/exhibit.php?id=" + ID;
-        var vehicleUrl = "http://multichoice.dealercp.com/vehicle/?id=" + ID + "&format=json&jsoncallback=?";
+        <? echo "var ID = $jsid;"; ?>
+        _url = "<?=$_SERVER['SERVER_NAME']?>/exhibit.php?id=" + ID;
+        _caption = '<?=$caption?>';
+        _description = '<?=$description?>';
+        var vehicleUrl = "<?=$details_url?>" + ID + "&format=json&jsoncallback=?";
         function addCommas(str) {
              var amount = new String(str);
              amount = amount.split("").reverse();
@@ -103,7 +105,7 @@ style="color:#3B5998;">
         $.getJSON(vehicleUrl, function(item){
                   $('#car_heading').html(item.year + ' ' + item.make + ' ' + item.model); 
                   $('#desc').html(item.desc); 
-                  title = 'Should I buy this car? - ' + item.year + ' ' + item.make + ' ' + item.model + ' ('+ item.color.ext +') - available now at MultiChoiceApps Car Pursuit, GA';
+                  title = 'Should I buy this car? - ' + item.year + ' ' + item.make + ' ' + item.model + ' ('+ item.color.ext +') - available now at <?=$company_name?>';
 
                   var twittUrl = "https://twitter.com/share?text=" + title + "&hashtag=carpursuit";
                   $('#button2').attr('href', twittUrl);
@@ -152,19 +154,18 @@ style="color:#3B5998;">
           $('#fav_1').show();           
            return false;          
         });        
-
-
       });
-      //facebook API
+
       FB.init({appId: '134384696717251', status: true, cookie: true});
       function postToFeed() {
+
         var obj = {
           method: 'feed',
-          link: url,
+          link: _url,
           picture: imageUrl,
           name: title,
-          caption: 'MultiChoiceApps Car Inventory Apps',
-          description: 'Car pursuit, GA is a mobile apps developed by a leading marketing company,MultichoiceApps from Atlanta.The developer is Kaidul from Bangladesh.'
+          caption: _caption,
+          description: _description
         };
 
          function callback(response) {

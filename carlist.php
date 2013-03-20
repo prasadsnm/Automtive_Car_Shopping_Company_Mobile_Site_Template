@@ -95,5 +95,3 @@
   </ul>
 </div><!-- /content -->
 <? include("footer.php"); ?>
-
-
